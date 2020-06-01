@@ -387,7 +387,9 @@ class QgridView extends widgets.DOMWidgetView {
     }
 
     if (this.index_columns.length > 0) {
-      this.columns = this.index_columns.concat(this.columns);
+      if (!this.grid_options['hideIndexColumn']) {
+        this.columns = this.index_columns.concat(this.columns);
+      }
     }
 
     var row_count = 0;
